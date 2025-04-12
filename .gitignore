@@ -1,0 +1,49 @@
+# — 🎥 Видео и медиаконтент
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.flv
+*.webm
+
+# — 🧩 HLS-файлы
+*.ts
+*.m3u8
+
+# — 💾 Git LFS placeholder (на всякий случай)
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+
+# — 📦 Node.js (если используешь фронтенд)
+node_modules/
+dist/
+build/
+
+# — 🛡 PHP & Laravel / backend
+/vendor/
+.env
+.env.*
+*.log
+storage/
+bootstrap/cache/
+
+# — 📂 Системные файлы
+.DS_Store
+Thumbs.db
+
+# — 🔧 IDE и редакторы
+.vscode/
+.idea/
+*.swp
+
+# — 🧪 Тесты и временные файлы
+coverage/
+*.tmp
+*.temp
+
+# — 🚀 Проекты на React (если используешь)
+*.cache
+*.eslintcache
+*.babelrc
+*.parcel-cache
+.next/
+out/
