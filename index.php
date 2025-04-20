@@ -88,19 +88,112 @@
     
     
   </header>
-  <section class="text-gray-600 body-font relative">
-    <div class="container sm:px-5 py-4 mx-auto sm:flex">
-      <div class="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 flex items-end justify-start relative">
-        
-
-      </div>
-      <div class=" lg:w-1/3 md:w-1/3 bg-white flex flex-col p-2 rounded-xl md:ml-auto  h-full  md:py-8 mt-8 md:mt-0 ">
-        <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Feedback</h2>
-        <p class="leading-relaxed mb-5 text-gray-600">Post-ironic portland shabby chic echo park, banjo fashion axe Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat illum quaerat quisquam alias nisi facilis velit? Sit amet excepturi officiis perspiciatis maxime sapiente, tempore repellendus consequuntur nam sint nesciunt libero?</p>
-        
-    </div>
-  </section>
   
+  <section class="text-gray-800 body-font py-8">
+  <div class="container mx-auto px-2 lg:px-8">
+    <div class="flex flex-col md:flex-row gap-6">
+      
+      <!-- Левая часть: Видео -->
+      <div class="md:w-2/3 w-full bg-white rounded-2xl overflow-hidden shadow-md">
+        <div class="w-full aspect-video">
+          <iframe
+            src="https://player.vimeo.com/video/1074242303"
+            class="w-full h-full"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="p-4">
+          <h2 class="text-xl font-semibold mb-2">Level 1: Видеоурок</h2>
+          <p class="text-gray-600">Смотри видео, чтобы перейти к следующему уровню. Убедись, что ты понял основную идею перед переходом дальше.</p>
+        </div>
+      </div>
+
+      <!-- Правая часть: Отзыв -->
+      <div class="md:w-1/3 w-full bg-white rounded-2xl p-2 shadow-md flex flex-col justify-between">
+        <div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-3">Feedback</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Post-ironic portland shabby chic echo park, banjo fashion axe. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Placeat illum quaerat quisquam alias nisi facilis velit?
+          </p>
+        </div>
+        <div class="mt-6 text-right">
+          <button class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-xl font-medium transition">
+            Выход
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+      <!-- Кнопка открытия -->
+<button id="openMenu"
+  class="fixed bottom-4 left-4 z-50 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none">
+  <!-- Иконка меню -->
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+    viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round"
+      d="M4 6h16M4 12h16M4 18h16" />
+  </svg>
+</button>
+
+<!-- Затемнение фона -->
+<div id="overlay"
+  class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300"></div>
+
+<!-- Боковое меню -->
+<div id="sidebar"
+  class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform  
+  -translate-x-full transition-transform duration-300 ease-in-out sm:w-64">
+  <div class="p-4  flex justify-between items-center">
+    <h2 class="text-lg font-semibold">Меню</h2>
+    <button id="closeMenu" class="text-gray-500 hover:text-black text-xl font-bold">×</button>
+  </div>
+  <div class="w-full flex flex-col items-center">
+    <div href="" class="flex items-center justify-center bg-[#e06b1c] w-32 py-4  rounded-lg border-1 border-[#0e30f0] ">
+        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="#fff" class="bi-play-fill" viewBox="0 0 16 16">
+            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"></path>
+        </svg>
+    </div>
+    <h1 class="this-video-h1 mb-1">beginer</h1>
+
+    <div class="video-container flex items-center justify-center bg-[#e06b1c] w-32  p-1 mb-1  rounded-lg border-1 border-[#0e30f0]">
+      <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="#fff" class="bi-play-fill" viewBox="0 0 16 16">
+        <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
+      </svg>
+      <span class="video-label">Смотреть видео</span>
+    </div>
+
+    <div class="video-container flex items-center justify-center bg-[#e06b1c] w-32  p-1 mb-1 rounded-lg border-1 border-[#0e30f0]">
+      <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="#fff" class="bi-play-fill" viewBox="0 0 16 16">
+        <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
+      </svg>
+      <span class="video-label">Смотреть видео</span>
+    </div>
+
+    <div class="video-container flex items-center justify-center bg-[#e06b1c] w-32  p-1 mb-1 rounded-lg border-1 border-[#0e30f0]">
+      <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="#fff" class="bi-play-fill" viewBox="0 0 16 16">
+        <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
+      </svg>
+      <span class="video-label">Смотреть видео</span>
+    </div>
+      
+  </div>
+</div>
+
+
+
+
+<!-- JS -->
+<script src="./js/menu.js">
+</script>   
+</section>
+ 
+
   <script src="https://cdn.jsdelivr.net/npm/shaka-player@3.1.0/dist/shaka-player.compiled.js"></script>
 
 <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
@@ -112,5 +205,5 @@
 
 </script> 
 
-</body>
+</body> 
 </html>
