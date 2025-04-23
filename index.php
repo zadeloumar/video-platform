@@ -147,7 +147,7 @@
 
 <!-- Боковое меню -->
 <div id="sidebar"
-  class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform  
+  class="fixed top-0 left-0 w-64 bg-white shadow-lg z-50 transform  
   -translate-x-full transition-transform duration-300 ease-in-out sm:w-64">
   <div class="p-4  flex justify-between items-center">
     <h2 class="text-lg font-semibold">Меню</h2>
