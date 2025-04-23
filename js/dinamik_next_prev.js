@@ -5,7 +5,7 @@ const videos = [
     desc: "Это вводное видео по HTML. В нём мы разберём структуру страницы и основные теги."
 },
 {
-    url: "https://player.vimeo.com/video/1078077266",
+    url: "https://player.vimeo.com/video/1078077266?title=0&byline=0",
     title: "Урок 2: Основы CSS",
     desc: "Во втором уроке мы познакомимся с базовыми свойствами CSS и научимся стилизовать HTML-элементы."
 },
@@ -29,6 +29,9 @@ const vid = videos[current];
 videoPlayer.src = vid.url;
 document.querySelector("h2").textContent = vid.title;
 videoDescription.textContent = vid.desc;
+// Добавляем измения названия спика 
+document.getElementById("detalText").textContent = `текуший урок: ${vid.title}`; // Добавляем классы Tailwind CSS
+
 
 // Управление доступностью кнопок
 prevBtn.disabled = current === 0;
@@ -51,4 +54,12 @@ if (current > 0) {
 
 // Инициализация
 updateVideo();
+
+function loadVideo(videoId, description) {
+    const iframe = document.getElementById('nexUp');
+  
+
+    iframe.src = `https://player.vimeo.com/video/${videoId}?title=0&byline=0&portrait=0`;
+
+}
 
