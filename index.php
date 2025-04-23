@@ -1,3 +1,34 @@
+<?php
+session_start();
+
+// Проверка, авторизован ли пользователь
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login.php");
+    exit();
+}
+
+// Подключение к базе данных
+// $mysqli = new mysqli("localhost", "a1007470_bd", "7xYde8!NzNaBLJ", "a1007470_bd");
+$mysqli = new mysqli("MySQL-8.2", "root", "", "cli_ar");
+
+if ($mysqli->connect_error) {
+    die("Ошибка подключения: " . $mysqli->connect_error);
+}
+
+// Получение данных пользователя
+$user_id = $_SESSION['user_id'];
+$sql = "SELECT username, userphone FROM users WHERE id = ?";
+$stmt = $mysqli->prepare($sql);
+
+if ($stmt === false) {
+    die("Ошибка подготовки запроса: " . $mysqli->error);
+}
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$stmt->bind_result($firstname, $lastname);
+$stmt->fetch();
+$stmt->close();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -22,7 +53,7 @@
                 <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"></path>
                </svg>
             </div>
-            <span>level 1</span>
+            <span><? echo $firstname;?></span>
           </summary>
           <div class="details__content">
               <div class="details__element flex items-center mb-2 gap-6">
