@@ -1,65 +1,44 @@
 const videos = [
-{
-    url: "https://player.vimeo.com/video/1074242303",
+    {
+    url: "https://player.vimeo.com/video/123456789",
     title: "Урок 1: Введение в HTML",
     desc: "Это вводное видео по HTML. В нём мы разберём структуру страницы и основные теги."
-},
-{
-    url: "https://player.vimeo.com/video/1078077266?title=0&byline=0",
+    },
+    {
+    url: "https://player.vimeo.com/video/1078077266",
     title: "Урок 2: Основы CSS",
     desc: "Во втором уроке мы познакомимся с базовыми свойствами CSS и научимся стилизовать HTML-элементы."
-},
-{
-    url: "https://player.vimeo.com/video/1074242303",
+    },
+    {
+    url: "https://player.vimeo.com/video/555555555",
     title: "Урок 3: JavaScript переменные",
     desc: "Разберёмся с переменными, типами данных и базовой логикой на JavaScript."
-}
-// Добавь ещё видео по аналогии
+    }
 ];
 
-let current = 0;
+let currentIndex = 0;
 
-const videoPlayer = document.getElementById("nexUp");
-const videoDescription = document.getElementById("videoDescription");
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
+function loadVideo(index) {
+    const iframe = document.getElementById('nexUp');
+    const description = document.getElementById('videoDescription');
+    const title = document.getElementById('videoTitle');
+    const hedTitle = document.getElementById('detalText');
 
-function updateVideo() {
-const vid = videos[current];
-videoPlayer.src = vid.url;
-document.querySelector("h2").textContent = vid.title;
-videoDescription.textContent = vid.desc;
-// Добавляем измения названия спика 
-document.getElementById("detalText").textContent = `текуший урок: ${vid.title}`; // Добавляем классы Tailwind CSS
+    iframe.src = `${videos[index].url}?title=0&byline=0&portrait=0`;
+    title.textContent = videos[index].title;
+    description.textContent = videos[index].desc;
+    hedTitle.textContent = `текуший урок: ${index + 1}`;
 
-
-// Управление доступностью кнопок
-prevBtn.disabled = current === 0;
-nextBtn.disabled = current === videos.length - 1;
+    currentIndex = index;
 }
 
 function nextVideo() {
-if (current < videos.length - 1) {
-    current++;
-    updateVideo();
-}
+    const nextIndex = (currentIndex + 1) % videos.length;
+    loadVideo(nextIndex);
 }
 
 function prevVideo() {
-if (current > 0) {
-    current--;
-    updateVideo();
-}
-}
-
-// Инициализация
-updateVideo();
-
-function loadVideo(videoId, description) {
-    const iframe = document.getElementById('nexUp');
-  
-
-    iframe.src = `https://player.vimeo.com/video/${videoId}?title=0&byline=0&portrait=0`;
-
+    const prevIndex = (currentIndex - 1 + videos.length) % videos.length;
+    loadVideo(prevIndex);
 }
 

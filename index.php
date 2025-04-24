@@ -59,7 +59,7 @@ $stmt->close();
           </summary>
           <!-- содержимое списка -->
           <div class="details__content">
-            <button onclick="loadVideo('1078077266', 'Описание видео 1')" class="hover:underline details__element flex items-center mb-2 gap-6">
+            <button onclick="loadVideo(0)" class="hover:underline details__element flex items-center mb-2 gap-6">
               <div href="" class="flex items-center justify-center bg-[#e06b1c] w-10 h-10 p-2  rounded-lg border-1 border-[#0e30f0]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi-play-fill" viewBox="0 0 16 16">
                   <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"></path>
@@ -67,33 +67,25 @@ $stmt->close();
               </div>
               <span>урок 1</span>
             </button>
-            <div class="details__content">
-            <div class="details__element flex items-center mb-2 gap-6">
+            
+            
+            <button onclick="loadVideo(1)" class="hover:underline details__element flex items-center mb-2 gap-6">
               <div href="" class="flex items-center justify-center bg-[#e06b1c] w-10 h-10 p-2  rounded-lg border-1 border-[#0e30f0]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi-play-fill" viewBox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi-play-fill" viewBox="0 0 16 16">
                   <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"></path>
                 </svg>
               </div>
               <span>урок 2</span>
-            </div>
-            <div class="details__content">
-            <div class="details__element flex items-center mb-2 gap-6">
+            </button>
+
+            <button onclick="loadVideo(2)" class="hover:underline details__element flex items-center mb-2 gap-6">
               <div href="" class="flex items-center justify-center bg-[#e06b1c] w-10 h-10 p-2  rounded-lg border-1 border-[#0e30f0]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi-play-fill" viewBox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi-play-fill" viewBox="0 0 16 16">
                   <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"></path>
                 </svg>
               </div>
               <span>урок 3</span>
-            </div>
-            <div class="details__content">
-            <div class="details__element flex items-center mb-2 gap-6">
-              <div href="" class="flex items-center justify-center bg-[#e06b1c] w-10 h-10 p-2  rounded-lg border-1 border-[#0e30f0]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi-play-fill" viewBox="0 0 16 16">
-                  <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"></path>
-                </svg>
-              </div>
-              <span>урок 4</span>
-            </div>
+            </button>
           </div>
         </details>
 
@@ -141,7 +133,7 @@ $stmt->close();
         <!-- Правая часть: Отзыв -->
         <div class="md:w-1/3 w-full bg-white rounded-2xl p-2 shadow-md flex flex-col justify-between">
           <div>
-            <h2 class="text-2xl font-semibold text-gray-800 mb-2">Название видео</h2>
+            <h2 id="videoTitle" class="text-2xl font-semibold text-gray-800 mb-2">Название видео</h2>
             <p  id="videoDescription" class="text-gray-600 leading-relaxed mb-4">
               Здесь будет описание видео. Вы можете добавить любую информацию, которую хотите.
             </p>
