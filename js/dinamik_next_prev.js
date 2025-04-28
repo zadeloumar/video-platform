@@ -16,7 +16,8 @@ const videos = [
     }
 ];
 
-let currentIndex = 0;
+let currentIndex = 0; // я пока что не понял как обяснит переменную но она нужна для индексированя списков
+//let lenghtVideolist = 3; // количества видео в одном ккаталоге 
 
 function loadVideo(index) {
     const iframe = document.getElementById('nexUp');
@@ -33,12 +34,16 @@ function loadVideo(index) {
 }
 
 function nextVideo() {
-    const nextIndex = (currentIndex + 1) % videos.length;
+    const nextIndex = (currentIndex + 1);
     loadVideo(nextIndex);
+    
+
 }
 
 function prevVideo() {
-    const prevIndex = (currentIndex - 1 + videos.length) % videos.length;
+    if (currentIndex > 0){
+        const prevIndex = (currentIndex - 1 + videos.length) % videos.length;
     loadVideo(prevIndex);
+    }
 }
-
+ loadVideo(currentIndex);

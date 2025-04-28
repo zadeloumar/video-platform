@@ -91,7 +91,7 @@ $stmt->close();
 
       </div>
       <div class="btn_exsit h-4/5 flex p-2 w-full sm:w-[18%] justify-center items-center gap-2">
-        <a class="bg-[#f39c12] p-2 rounded-lg text-center w-full" href="">Выход</a>
+        <a class="bg-[#f39c12] p-2 rounded-lg text-center w-full" href="../about.php">Выход</a>
       </div>
     </div>
   </header>
